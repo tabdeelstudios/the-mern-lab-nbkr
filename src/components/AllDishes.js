@@ -1,17 +1,12 @@
 import IndividualDish from './IndividualDish';
 
-const AllDishes = () => {
+const AllDishes = ({ menu }) => {
+    console.log(menu);
     return (
         <div id="dishes">
-            <IndividualDish />
-            <IndividualDish />
-            <IndividualDish />
-            <IndividualDish />
-            <IndividualDish />
-            <IndividualDish />
-            <IndividualDish />
-            <IndividualDish />
-            <IndividualDish />
+            {menu && menu.map((dish) => (
+                <IndividualDish name={dish.title} price={dish.price} content={dish.desc} />
+            ))}
         </div>
     );
 }
