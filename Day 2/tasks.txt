@@ -1,0 +1,7 @@
+tasks: [
+{ id: 1, title: "Buy milk", status: "complete" },
+{ id: 2, title: "Send email", status: "complete" },
+{ id: 3, title: "Attend meeting", status: "complete" },
+{ id: 4, title: "Plan the day", status: "complete" },
+{ id: 5, title: "Watch a movie", status: "complete" },
+];

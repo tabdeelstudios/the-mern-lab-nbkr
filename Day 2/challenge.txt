@@ -1,0 +1,13 @@
+Create a New Node Project
+Import the 4 packages that we need
+    - nodemon (npm install -D nodemon)
+    - express (npm install express)
+    - body-parser (npm install body-parser)
+    - cors (npm install cors)
+Create index.js file and import all 3 dependencies
+Create an express App and get a simple Output on the screen
+Add nodemon in package.json and start the server
+Return all tasks in the GET method and test it with Thunder Client
+Allow the user to add a new task to the list and return a success message
+Allow the user to delete a task (try later)
+Allow the user to update a task (try later)

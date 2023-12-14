@@ -1,0 +1,5 @@
+1. Open Folder in VS Code (File->Open Folder)
+2. Check Node version (Terminal-> node -v)
+3. Initialise Node Project (Terminal -> npm init)
+4. Answer all questions to get package.json file
+5. To install Node -> https://nodejs.org/en/
