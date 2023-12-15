@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from 'axios';
 
 function SignupStudent() {
 
@@ -9,7 +10,18 @@ function SignupStudent() {
 
     return (
         <>
-            <form>
+            <form onSubmit={(e) => {
+                e.preventDefault();
+                axios.post("http://localhost:3001/signup", {
+                    useremail: userEmail,
+                    username: userName,
+                    userpassword: userPassword
+                }).then((res) => {
+                    res.data.success === true ?
+                        window.location.href('/login') :
+                        setUserMessage(res.data.message);
+                });
+            }}>
                 <input type="text"
                     placeholder="Email"
                     value={userEmail}
