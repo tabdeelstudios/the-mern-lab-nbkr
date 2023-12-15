@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from axios;
 
 function LoginStudent() {
 
@@ -8,7 +9,19 @@ function LoginStudent() {
 
     return (
         <>
-            <form>
+            <form onSubmit={(e) => {
+                e.preventDefault();
+                axios.post("http://localhost:3001/login", {
+                    username: userName,
+                    userpassword: userPassword
+                }).then((res) => {
+                    if (res.data.success === true) {
+                        window.location.href = "/";
+                    } else {
+                        setUserMessage(res.data.message);
+                    }
+                });
+            }}>
                 <input type="text"
                     placeholder="Username"
                     value={userName}
