@@ -1,6 +1,7 @@
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
+import CourseCard from './CourseCard';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
@@ -10,7 +11,8 @@ function AllCourses() {
 
     useEffect(() => {
         axios.get("http://localhost:3001/courseList").then((res) => {
-            setCourseList(res.data.courseList);
+            console.log(res.data);
+            setCourseList(res.data);
         });
     });
 
@@ -18,6 +20,7 @@ function AllCourses() {
         <>
             <Container>
                 <Row>
+
                     {courseList && courseList.map((course) => (
                         <Col>
                             <CourseCard
